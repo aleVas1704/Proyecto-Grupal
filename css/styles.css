@@ -42,6 +42,9 @@
   background: var(--orange-dark);
   border-radius: 4px;
 }
+.note-card:hover {
+  box-shadow: 0 8px 24px rgba(255, 100, 0, 0.2);
+}
 @media (max-width: 1024px) {
   .workflow-grid,
   .team-grid {
