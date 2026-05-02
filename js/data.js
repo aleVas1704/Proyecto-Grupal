@@ -23,5 +23,31 @@ export const notes = [
       }
     ],
     tags: ["Git", "Versiones", "Configuración"]
+  },
+
+  {
+    id: "clase-2",
+    classNumber: "Clase 2",
+    title: "Repositorio, estados y commits",
+    category: "basico",
+    level: "Básico",
+    summary: "Flujo básico de trabajo usando status, add y commit.",
+    description:
+      "Se estudiaron los estados principales de Git: directorio de trabajo, stage area y repositorio local. También se practicó cómo guardar cambios mediante commits.",
+    commands: [
+      {
+        command: "git status",
+        description: "Muestra el estado actual de los archivos."
+      },
+      {
+        command: "git add .",
+        description: "Agrega todos los cambios al área de preparación."
+      },
+      {
+        command: "git commit -m \"mensaje\"",
+        description: "Guarda los cambios en el historial del repositorio local."
+      }
+    ],
+    tags: ["Commit", "Stage", "Repositorio"]
   }
 ];
