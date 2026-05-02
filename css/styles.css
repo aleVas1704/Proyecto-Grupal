@@ -21,4 +21,8 @@
 .note-card.open .note-header {
   background: var(--orange-soft);
 }
-
+.team-card:hover,
+.workflow-card:hover {
+  transform: translateY(-5px);
+  transition: var(--transition);
+}
