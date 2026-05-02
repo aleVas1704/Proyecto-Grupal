@@ -34,6 +34,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="hero-content">
         <span class="hero-badge">Curso SCESI Git 2026</span>
@@ -66,6 +67,52 @@
         </div>
       </div>
     </section>
+
+    <!-- APUNTES -->
+    <section id="apuntes" class="section notes-section">
+      <div class="section-heading">
+        <span class="section-badge">Contenido del curso</span>
+        <h2>Lista de apuntes</h2>
+        <p>
+          Busca un tema o filtra los apuntes según la parte del curso que quieras repasar.
+        </p>
+      </div>
+
+      <div class="notes-controls">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar: commit, SSH, ramas, pull request..."
+        >
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="basico">Básico</button>
+          <button class="filter-btn" data-filter="github">GitHub</button>
+          <button class="filter-btn" data-filter="ramas">Ramas</button>
+          <button class="filter-btn" data-filter="equipo">Equipo</button>
+        </div>
+      </div>
+
+      <div class="progress-box">
+        <div>
+          <strong id="progressText">0 de 0 apuntes abiertos</strong>
+          <span>Tu avance se guarda en este navegador.</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div id="notesGrid" class="notes-grid"></div>
+
+      <p id="emptyState" class="empty-state hidden">
+        No se encontraron apuntes con esa búsqueda.
+      </p>
+    </section>
+
   </main>
 
   <footer></footer>
