@@ -9,18 +9,9 @@ export const notes = [
     description:
       "Git es un sistema de control de versiones que permite guardar cambios, revisar el historial del proyecto y volver a versiones anteriores cuando sea necesario.",
     commands: [
-      {
-        command: "git --version",
-        description: "Verifica que Git esté instalado en la computadora."
-      },
-      {
-        command: "git config --global user.name \"Tu Nombre\"",
-        description: "Configura el nombre que aparecerá en los commits."
-      },
-      {
-        command: "git config --global user.email \"correo@gmail.com\"",
-        description: "Configura el correo que aparecerá asociado a los commits."
-      }
+      { command: "git --version", description: "Verifica que Git esté instalado en la computadora." },
+      { command: "git config --global user.name \"Tu Nombre\"", description: "Configura el nombre del commit." },
+      { command: "git config --global user.email \"correo@gmail.com\"", description: "Configura el correo del commit." }
     ],
     tags: ["Git", "Versiones", "Configuración"]
   },
@@ -33,20 +24,11 @@ export const notes = [
     level: "Básico",
     summary: "Flujo básico de trabajo usando status, add y commit.",
     description:
-      "Se estudiaron los estados principales de Git: directorio de trabajo, stage area y repositorio local. También se practicó cómo guardar cambios mediante commits.",
+      "Se estudiaron los estados principales de Git y cómo guardar cambios mediante commits.",
     commands: [
-      {
-        command: "git status",
-        description: "Muestra el estado actual de los archivos."
-      },
-      {
-        command: "git add .",
-        description: "Agrega todos los cambios al área de preparación."
-      },
-      {
-        command: "git commit -m \"mensaje\"",
-        description: "Guarda los cambios en el historial del repositorio local."
-      }
+      { command: "git status", description: "Muestra el estado actual." },
+      { command: "git add .", description: "Agrega cambios al stage." },
+      { command: "git commit -m \"mensaje\"", description: "Guarda cambios." }
     ],
     tags: ["Commit", "Stage", "Repositorio"]
   },
@@ -59,21 +41,29 @@ export const notes = [
     level: "Intermedio",
     summary: "Configuración de llaves SSH para trabajar con GitHub.",
     description:
-      "Se configuró una conexión segura entre la computadora y GitHub mediante una llave SSH. Esto permite clonar, hacer push y trabajar sin escribir contraseña cada vez.",
+      "Se configuró una conexión segura con GitHub usando llaves SSH.",
     commands: [
-      {
-        command: "ssh-keygen -t ed25519 -C \"correo@gmail.com\"",
-        description: "Crea una nueva llave SSH."
-      },
-      {
-        command: "cat ~/.ssh/id_ed25519.pub",
-        description: "Muestra la llave pública que se debe copiar en GitHub."
-      },
-      {
-        command: "ssh -T git@github.com",
-        description: "Prueba si la conexión SSH con GitHub funciona."
-      }
+      { command: "ssh-keygen -t ed25519 -C \"correo@gmail.com\"", description: "Crea llave SSH." },
+      { command: "cat ~/.ssh/id_ed25519.pub", description: "Ver llave pública." },
+      { command: "ssh -T git@github.com", description: "Probar conexión." }
     ],
     tags: ["SSH", "GitHub", "Keygen"]
+  },
+
+  {
+    id: "clase-4",
+    classNumber: "Clase 4",
+    title: "Ramas en Git",
+    category: "ramas",
+    level: "Intermedio",
+    summary: "Uso de ramas para separar funcionalidades del proyecto.",
+    description:
+      "Las ramas permiten trabajar en nuevas funcionalidades sin afectar la rama principal. Son clave para trabajo en equipo.",
+    commands: [
+      { command: "git branch", description: "Lista las ramas." },
+      { command: "git switch -c feature/nueva-rama", description: "Crear nueva rama." },
+      { command: "git switch develop", description: "Cambiar a develop." }
+    ],
+    tags: ["Branch", "Switch", "Feature"]
   }
 ];
