@@ -14,3 +14,11 @@
     transform: translateY(0);
   }
 }
+.note-card.open {
+  border-left-color: var(--orange-dark);
+}
+
+.note-card.open .note-header {
+  background: var(--orange-soft);
+}
+
