@@ -196,3 +196,99 @@ body {
   font-size: 14px;
   color: #e5e7eb;
 }
+.section {
+  width: 92%;
+  max-width: 1180px;
+  margin: auto;
+  padding: 85px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-heading h2 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.section-heading p {
+  max-width: 750px;
+  margin: auto;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.section-badge {
+  display: inline-block;
+  background: rgba(249, 115, 22, 0.16);
+  color: var(--orange);
+  padding: 8px 15px;
+  border: 1px solid rgba(249, 115, 22, 0.45);
+  border-radius: 999px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.dark-section {
+  width: 100%;
+  max-width: none;
+  padding-left: 4%;
+  padding-right: 4%;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.dark-section .section-heading p {
+  color: #d1d5db;
+}
+
+.workflow-grid,
+.team-grid {
+  width: 92%;
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  gap: 22px;
+}
+
+.workflow-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.team-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.workflow-card,
+.team-card {
+  background: var(--white);
+  color: var(--black);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border-top: 5px solid var(--orange);
+}
+
+.workflow-card span {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.workflow-card h3,
+.team-card h3 {
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.workflow-card p,
+.team-card p {
+  color: var(--gray);
+  line-height: 1.6;
+}
