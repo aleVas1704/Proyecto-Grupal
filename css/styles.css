@@ -26,6 +26,11 @@
   transform: translateY(-5px);
   transition: var(--transition);
 }
+::selection {
+  background: var(--orange-dark);
+  color: white;
+}
+
 @media (max-width: 1024px) {
   .workflow-grid,
   .team-grid {
@@ -40,6 +45,7 @@
     font-size: 44px;
   }
 }
+
 @media (max-width: 760px) {
   .navbar {
     flex-direction: column;
