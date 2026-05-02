@@ -49,5 +49,31 @@ export const notes = [
       }
     ],
     tags: ["Commit", "Stage", "Repositorio"]
+  },
+
+  {
+    id: "clase-3",
+    classNumber: "Clase 3",
+    title: "GitHub y conexión SSH",
+    category: "github",
+    level: "Intermedio",
+    summary: "Configuración de llaves SSH para trabajar con GitHub.",
+    description:
+      "Se configuró una conexión segura entre la computadora y GitHub mediante una llave SSH. Esto permite clonar, hacer push y trabajar sin escribir contraseña cada vez.",
+    commands: [
+      {
+        command: "ssh-keygen -t ed25519 -C \"correo@gmail.com\"",
+        description: "Crea una nueva llave SSH."
+      },
+      {
+        command: "cat ~/.ssh/id_ed25519.pub",
+        description: "Muestra la llave pública que se debe copiar en GitHub."
+      },
+      {
+        command: "ssh -T git@github.com",
+        description: "Prueba si la conexión SSH con GitHub funciona."
+      }
+    ],
+    tags: ["SSH", "GitHub", "Keygen"]
   }
 ];
