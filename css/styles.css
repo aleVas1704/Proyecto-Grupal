@@ -26,3 +26,17 @@
   transform: translateY(-5px);
   transition: var(--transition);
 }
+@media (max-width: 1024px) {
+  .workflow-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+}
