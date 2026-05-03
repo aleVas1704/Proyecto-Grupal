@@ -292,3 +292,37 @@ body {
   color: var(--gray);
   line-height: 1.6;
 }
+.footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.footer span {
+  display: block;
+  margin-top: 6px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  box-shadow: var(--shadow);
+}
+
+.back-to-top.show {
+  display: block;
+}
