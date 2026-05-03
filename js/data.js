@@ -86,13 +86,29 @@ export const notes = [
     category: "equipo",
     level: "Intermedio",
     summary: "Organización del proyecto con ramas.",
-    description:
-      "GitFlow organiza el proyecto usando ramas principales como main y develop, y ramas feature para cada funcionalidad.",
+    description: "GitFlow organiza el proyecto usando main, develop y feature.",
     commands: [
-      { command: "git switch main", description: "Ir a rama estable." },
+      { command: "git switch main", description: "Ir a estable." },
       { command: "git switch develop", description: "Ir a desarrollo." },
       { command: "git merge feature/nombre-rama", description: "Unir cambios." }
     ],
-    tags: ["GitFlow", "Main", "Develop"]
+    tags: ["GitFlow"]
+  },
+
+  {
+    id: "clase-7",
+    classNumber: "Clase 7",
+    title: "Diferencias, stash y conflictos",
+    category: "equipo",
+    level: "Intermedio",
+    summary: "Herramientas para comparar y resolver problemas.",
+    description:
+      "Se usan comandos para ver diferencias, guardar cambios temporales y resolver conflictos entre ramas.",
+    commands: [
+      { command: "git diff", description: "Ver diferencias." },
+      { command: "git stash", description: "Guardar cambios temporalmente." },
+      { command: "git stash pop", description: "Recuperar cambios." }
+    ],
+    tags: ["Diff", "Stash", "Conflictos"]
   }
 ];
