@@ -70,13 +70,29 @@ export const notes = [
     category: "github",
     level: "Intermedio",
     summary: "Revisión y unión de cambios en GitHub.",
-    description:
-      "Un Pull Request permite proponer cambios desde una rama hacia otra para revisión antes de integrar al proyecto.",
+    description: "Permite integrar cambios mediante revisión.",
     commands: [
       { command: "git push -u origin feature/nombre-rama", description: "Subir rama." },
-      { command: "base: develop", description: "Rama destino." },
-      { command: "compare: feature/nombre-rama", description: "Rama origen." }
+      { command: "base: develop", description: "Destino." },
+      { command: "compare: feature/nombre-rama", description: "Origen." }
     ],
-    tags: ["Pull Request", "GitHub"]
+    tags: ["Pull Request"]
+  },
+
+  {
+    id: "clase-6",
+    classNumber: "Clase 6",
+    title: "GitFlow",
+    category: "equipo",
+    level: "Intermedio",
+    summary: "Organización del proyecto con ramas.",
+    description:
+      "GitFlow organiza el proyecto usando ramas principales como main y develop, y ramas feature para cada funcionalidad.",
+    commands: [
+      { command: "git switch main", description: "Ir a rama estable." },
+      { command: "git switch develop", description: "Ir a desarrollo." },
+      { command: "git merge feature/nombre-rama", description: "Unir cambios." }
+    ],
+    tags: ["GitFlow", "Main", "Develop"]
   }
 ];
