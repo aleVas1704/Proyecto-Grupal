@@ -10,6 +10,10 @@ const progressBar = document.querySelector("#progressBar");
 const searchInput = document.querySelector("#searchInput");
 let currentSearch = "";
 
+// FILTROS (NUEVO)
+const filterButtons = document.querySelectorAll(".filter-btn");
+let currentFilter = "all";
+
 // LOCAL STORAGE
 let openedNotes = JSON.parse(localStorage.getItem("openedNotes")) || [];
 
@@ -17,16 +21,21 @@ function saveOpenedNotes() {
   localStorage.setItem("openedNotes", JSON.stringify(openedNotes));
 }
 
-// FILTRAR (NUEVO)
+// FILTRAR (ACTUALIZADO)
 function getFilteredNotes() {
   return notes.filter(note => {
+    const matchesFilter =
+      currentFilter === "all" || note.category === currentFilter;
+
     const text = `
       ${note.title}
       ${note.summary}
       ${note.description}
     `.toLowerCase();
 
-    return text.includes(currentSearch.toLowerCase());
+    const matchesSearch = text.includes(currentSearch.toLowerCase());
+
+    return matchesFilter && matchesSearch;
   });
 }
 
@@ -65,7 +74,7 @@ function renderNotes() {
   updateProgress();
 }
 
-// EVENTOS
+// EVENTOS TARJETAS
 function activateNoteEvents() {
   document.querySelectorAll(".note-card").forEach(card => {
     const id = card.dataset.id;
@@ -97,13 +106,26 @@ function updateProgress() {
   progressBar.style.width = percent + "%";
 }
 
-// EVENTO BUSCADOR (NUEVO)
+// BUSCADOR
 searchInput.addEventListener("input", () => {
   currentSearch = searchInput.value.trim();
   renderNotes();
 });
 
+// FILTROS (NUEVO)
+filterButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentFilter = btn.dataset.filter;
+
+    // cambiar botón activo
+    filterButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    renderNotes();
+  });
+});
+
 // INICIAR
 renderNotes();
 
-console.log("Camila 7 listo 🔍");
+console.log("Camila 8 listo 🔥");
