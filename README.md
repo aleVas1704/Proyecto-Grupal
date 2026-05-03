@@ -1,20 +1,24 @@
-### Logo 
+### Logo
 ![Equipo](assets/foto-equipo.jpg)
+
 ## Integrantes
+
 ### Ignacio Alex Escobar Vasquez
-![Ignacio](assets/ignacio.jpg)
-- M-' alexvasquez17dev@gmail.com
-- M-1 72781371
+![Ignacio](assets/foto-ignacio.jpg)
+- 📧 alexvasquez17dev@gmail.com
+- 📱 72781371
+
 ### Jhoel Rodrigo Alata Cruz
 ![Jhoel](assets/foto-jhoel.jpg)
--  M-'alatajhoelrodrigo@gmail.com
--  M-1 63645865
-### Ariana camila Fernández rios 
+- 📧 alatajhoelrodrigo@gmail.com
+- 📱 63645865
+
+### Ariana Camila Fernández Rios
 ![Camila](assets/foto-camila.jpg)
--  M-'camifer802@gmail.com
--  M-1 62633166
+- 📧 camifer802@gmail.com
+- 📱 62633166
+
 ### Gabriel Jhoan Cespedes Garcia
 ![Gabriel](assets/foto-gabriel.jpg)
--  M-' 202401173@est.umss.edu
--  M-1 67438391
-
+- 📧 202401173@est.umss.edu
+- 📱 67438391
