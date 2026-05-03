@@ -14,6 +14,12 @@ let currentSearch = "";
 const filterButtons = document.querySelectorAll(".filter-btn");
 let currentFilter = "all";
 
+// BOTÓN TOP (NUEVO)
+const backToTop = document.querySelector("#backToTop");
+
+// NAV LINKS (NUEVO)
+const navLinks = document.querySelectorAll(".nav-links a");
+
 // LOCAL STORAGE
 let openedNotes = JSON.parse(localStorage.getItem("openedNotes")) || [];
 
@@ -40,7 +46,7 @@ function getFilteredNotes() {
   });
 }
 
-// CREAR COMANDO (NUEVO)
+// COMANDOS
 function createCommandItem(cmd) {
   return `
     <div class="command-item">
@@ -55,7 +61,7 @@ function createCommandItem(cmd) {
   `;
 }
 
-// CREAR TARJETA
+// TARJETA
 function createNoteCard(note) {
   const isOpen = openedNotes.includes(note.id);
 
@@ -91,7 +97,7 @@ function renderNotes() {
   notesGrid.innerHTML = filtered.map(createNoteCard).join("");
 
   activateNoteEvents();
-  activateCopyButtons(); // ← NUEVO
+  activateCopyButtons();
   updateProgress();
 }
 
@@ -117,7 +123,7 @@ function activateNoteEvents() {
   });
 }
 
-// COPIAR (NUEVO 🔥)
+// COPIAR
 function activateCopyButtons() {
   document.querySelectorAll(".copy-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -164,7 +170,48 @@ filterButtons.forEach(btn => {
   });
 });
 
+// BOTÓN SUBIR (NUEVO 🔥)
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+
+  updateActiveNavLink();
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// NAV ACTIVA (NUEVO 🔥)
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll("section[id]");
+  let current = "";
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+
+    if (window.scrollY >= top) {
+      current = section.id;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+}
+
 // INICIAR
 renderNotes();
+updateActiveNavLink();
 
-console.log("Camila 9 listo 🚀");
+console.log("Camila 10 COMPLETO 🚀");
