@@ -5,15 +5,14 @@ export const notes = [
     title: "Introducción a Git",
     category: "basico",
     level: "Básico",
-    summary: "Conceptos iniciales sobre control de versiones y utilidad de Git.",
-    description:
-      "Git es un sistema de control de versiones que permite guardar cambios, revisar el historial del proyecto y volver a versiones anteriores cuando sea necesario.",
+    summary: "Conceptos iniciales sobre control de versiones.",
+    description: "Git permite guardar cambios y volver a versiones anteriores.",
     commands: [
-      { command: "git --version", description: "Verifica que Git esté instalado en la computadora." },
-      { command: "git config --global user.name \"Tu Nombre\"", description: "Configura el nombre del commit." },
-      { command: "git config --global user.email \"correo@gmail.com\"", description: "Configura el correo del commit." }
+      { command: "git --version", description: "Verifica Git." },
+      { command: "git config --global user.name \"Tu Nombre\"", description: "Configura nombre." },
+      { command: "git config --global user.email \"correo@gmail.com\"", description: "Configura correo." }
     ],
-    tags: ["Git", "Versiones", "Configuración"]
+    tags: ["Git", "Versiones"]
   },
 
   {
@@ -22,15 +21,14 @@ export const notes = [
     title: "Repositorio, estados y commits",
     category: "basico",
     level: "Básico",
-    summary: "Flujo básico de trabajo usando status, add y commit.",
-    description:
-      "Se estudiaron los estados principales de Git y cómo guardar cambios mediante commits.",
+    summary: "Uso de status, add y commit.",
+    description: "Se trabajan los estados del repositorio y commits.",
     commands: [
-      { command: "git status", description: "Muestra el estado actual." },
-      { command: "git add .", description: "Agrega cambios al stage." },
-      { command: "git commit -m \"mensaje\"", description: "Guarda cambios." }
+      { command: "git status", description: "Ver estado." },
+      { command: "git add .", description: "Agregar cambios." },
+      { command: "git commit -m \"mensaje\"", description: "Guardar cambios." }
     ],
-    tags: ["Commit", "Stage", "Repositorio"]
+    tags: ["Commit"]
   },
 
   {
@@ -39,15 +37,14 @@ export const notes = [
     title: "GitHub y conexión SSH",
     category: "github",
     level: "Intermedio",
-    summary: "Configuración de llaves SSH para trabajar con GitHub.",
-    description:
-      "Se configuró una conexión segura con GitHub usando llaves SSH.",
+    summary: "Uso de SSH con GitHub.",
+    description: "Permite conexión segura sin contraseña.",
     commands: [
-      { command: "ssh-keygen -t ed25519 -C \"correo@gmail.com\"", description: "Crea llave SSH." },
-      { command: "cat ~/.ssh/id_ed25519.pub", description: "Ver llave pública." },
+      { command: "ssh-keygen -t ed25519 -C \"correo@gmail.com\"", description: "Crear llave." },
+      { command: "cat ~/.ssh/id_ed25519.pub", description: "Ver llave." },
       { command: "ssh -T git@github.com", description: "Probar conexión." }
     ],
-    tags: ["SSH", "GitHub", "Keygen"]
+    tags: ["SSH"]
   },
 
   {
@@ -56,14 +53,30 @@ export const notes = [
     title: "Ramas en Git",
     category: "ramas",
     level: "Intermedio",
-    summary: "Uso de ramas para separar funcionalidades del proyecto.",
-    description:
-      "Las ramas permiten trabajar en nuevas funcionalidades sin afectar la rama principal. Son clave para trabajo en equipo.",
+    summary: "Uso de ramas.",
+    description: "Permiten trabajar sin afectar main.",
     commands: [
-      { command: "git branch", description: "Lista las ramas." },
-      { command: "git switch -c feature/nueva-rama", description: "Crear nueva rama." },
-      { command: "git switch develop", description: "Cambiar a develop." }
+      { command: "git branch", description: "Listar ramas." },
+      { command: "git switch -c feature/nueva-rama", description: "Crear rama." },
+      { command: "git switch develop", description: "Cambiar rama." }
     ],
-    tags: ["Branch", "Switch", "Feature"]
+    tags: ["Branch"]
+  },
+
+  {
+    id: "clase-5",
+    classNumber: "Clase 5",
+    title: "Pull Requests",
+    category: "github",
+    level: "Intermedio",
+    summary: "Revisión y unión de cambios en GitHub.",
+    description:
+      "Un Pull Request permite proponer cambios desde una rama hacia otra para revisión antes de integrar al proyecto.",
+    commands: [
+      { command: "git push -u origin feature/nombre-rama", description: "Subir rama." },
+      { command: "base: develop", description: "Rama destino." },
+      { command: "compare: feature/nombre-rama", description: "Rama origen." }
+    ],
+    tags: ["Pull Request", "GitHub"]
   }
 ];
