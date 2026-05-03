@@ -6,7 +6,7 @@ export const notes = [
     category: "basico",
     level: "Básico",
     summary: "Conceptos iniciales sobre control de versiones.",
-    description: "Git permite guardar cambios y volver a versiones anteriores.",
+    description: "Git es un sistema de control de versiones distribuido que permite registrar cambios, colaborar en equipo y recuperar versiones anteriores del proyecto.",
     commands: [
       { command: "git --version", description: "Verifica Git." },
       { command: "git config --global user.name \"Tu Nombre\"", description: "Configura nombre." },
@@ -69,8 +69,8 @@ export const notes = [
     title: "Pull Requests",
     category: "github",
     level: "Intermedio",
-    summary: "Revisión y unión de cambios en GitHub.",
-    description: "Permite integrar cambios mediante revisión.",
+    summary: "Proceso de revisión y colaboración mediante Pull Requests.",
+    description: "Un Pull Request permite proponer cambios desde una rama hacia otra, facilitando la revisión del código antes de integrarlo al proyecto principal.",
     commands: [
       { command: "git push -u origin feature/nombre-rama", description: "Subir rama." },
       { command: "base: develop", description: "Destino." },
@@ -85,7 +85,7 @@ export const notes = [
     title: "GitFlow",
     category: "equipo",
     level: "Intermedio",
-    summary: "Organización del proyecto con ramas.",
+    summary: "Estrategia de organización de ramas para desarrollo colaborativo.",
     description: "GitFlow organiza el proyecto usando main, develop y feature.",
     commands: [
       { command: "git switch main", description: "Ir a estable." },
