@@ -10,7 +10,7 @@ const progressBar = document.querySelector("#progressBar");
 const searchInput = document.querySelector("#searchInput");
 let currentSearch = "";
 
-// FILTROS (NUEVO)
+// FILTROS
 const filterButtons = document.querySelectorAll(".filter-btn");
 let currentFilter = "all";
 
@@ -21,7 +21,7 @@ function saveOpenedNotes() {
   localStorage.setItem("openedNotes", JSON.stringify(openedNotes));
 }
 
-// FILTRAR (ACTUALIZADO)
+// FILTRAR
 function getFilteredNotes() {
   return notes.filter(note => {
     const matchesFilter =
@@ -31,12 +31,28 @@ function getFilteredNotes() {
       ${note.title}
       ${note.summary}
       ${note.description}
+      ${note.commands.map(c => c.command).join(" ")}
     `.toLowerCase();
 
     const matchesSearch = text.includes(currentSearch.toLowerCase());
 
     return matchesFilter && matchesSearch;
   });
+}
+
+// CREAR COMANDO (NUEVO)
+function createCommandItem(cmd) {
+  return `
+    <div class="command-item">
+      <div>
+        <code>${cmd.command}</code>
+        <p>${cmd.description}</p>
+      </div>
+      <button class="copy-btn" data-command="${cmd.command}">
+        Copiar
+      </button>
+    </div>
+  `;
 }
 
 // CREAR TARJETA
@@ -58,6 +74,10 @@ function createNoteCard(note) {
 
       <div class="note-body">
         <p>${note.description}</p>
+
+        <div class="commands-list">
+          ${note.commands.map(createCommandItem).join("")}
+        </div>
       </div>
 
     </article>
@@ -71,6 +91,7 @@ function renderNotes() {
   notesGrid.innerHTML = filtered.map(createNoteCard).join("");
 
   activateNoteEvents();
+  activateCopyButtons(); // ← NUEVO
   updateProgress();
 }
 
@@ -96,6 +117,25 @@ function activateNoteEvents() {
   });
 }
 
+// COPIAR (NUEVO 🔥)
+function activateCopyButtons() {
+  document.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const command = btn.dataset.command;
+
+      navigator.clipboard.writeText(command).then(() => {
+        btn.textContent = "Copiado";
+
+        setTimeout(() => {
+          btn.textContent = "Copiar";
+        }, 1200);
+      });
+    });
+  });
+}
+
 // PROGRESO
 function updateProgress() {
   const total = notes.length;
@@ -112,12 +152,11 @@ searchInput.addEventListener("input", () => {
   renderNotes();
 });
 
-// FILTROS (NUEVO)
+// FILTROS
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     currentFilter = btn.dataset.filter;
 
-    // cambiar botón activo
     filterButtons.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
@@ -128,4 +167,4 @@ filterButtons.forEach(btn => {
 // INICIAR
 renderNotes();
 
-console.log("Camila 8 listo 🔥");
+console.log("Camila 9 listo 🚀");
