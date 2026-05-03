@@ -102,13 +102,29 @@ export const notes = [
     category: "equipo",
     level: "Intermedio",
     summary: "Herramientas para comparar y resolver problemas.",
-    description:
-      "Se usan comandos para ver diferencias, guardar cambios temporales y resolver conflictos entre ramas.",
+    description: "Se usan comandos para ver diferencias y resolver conflictos.",
     commands: [
       { command: "git diff", description: "Ver diferencias." },
-      { command: "git stash", description: "Guardar cambios temporalmente." },
+      { command: "git stash", description: "Guardar cambios." },
       { command: "git stash pop", description: "Recuperar cambios." }
     ],
     tags: ["Diff", "Stash", "Conflictos"]
+  },
+
+  {
+    id: "clase-8",
+    classNumber: "Clase 8",
+    title: "Buenas prácticas y commits",
+    category: "equipo",
+    level: "Intermedio",
+    summary: "Cómo escribir commits claros y mantener orden.",
+    description:
+      "Se recomienda hacer commits pequeños, claros y descriptivos. Usar mensajes como feat, fix, docs mejora la organización del proyecto.",
+    commands: [
+      { command: "git log --oneline", description: "Ver historial resumido." },
+      { command: "git commit --amend -m \"nuevo mensaje\"", description: "Editar último commit." },
+      { command: "git log --oneline --graph --all", description: "Ver historial gráfico." }
+    ],
+    tags: ["Buenas prácticas", "Commits", "Historial"]
   }
 ];
