@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Clases</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <a href="#inicio" class="brand">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+          alt="Logo GitHub"
+          class="brand-logo github-logo"
+        >
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+          alt="Logo Git"
+          class="brand-logo"
+        >
+        <span>GitHub Clases</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#apuntes">Apuntes</a></li>
+        <li><a href="#gitflow">GitFlow</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Curso SCESI Git 2026</span>
+        <h1>Aprende Git y GitHub con apuntes interactivos</h1>
+        <p>
+          Página web grupal para repasar comandos, ramas, commits,
+          SSH, Pull Requests, GitFlow y buenas prácticas de trabajo colaborativo.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#apuntes" class="btn btn-primary">Ver apuntes</a>
+          <a href="#gitflow" class="btn btn-outline">Ver flujo GitFlow</a>
+        </div>
+
+        <div class="hero-stats">
+          <article>
+            <strong>7+</strong>
+            <span>Clases resumidas</span>
+          </article>
+
+          <article>
+            <strong>40+</strong>
+            <span>Commits grupales</span>
+          </article>
+
+          <article>
+            <strong>4</strong>
+            <span>Integrantes</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- APUNTES -->
+    <section id="apuntes" class="section notes-section">
+      <div class="section-heading">
+        <span class="section-badge">Contenido del curso</span>
+        <h2>Lista de apuntes</h2>
+        <p>
+          Busca un tema o filtra los apuntes según la parte del curso que quieras repasar.
+        </p>
+      </div>
+
+      <div class="notes-controls">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Buscar: commit, SSH, ramas, pull request..."
+        >
+
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="basico">Básico</button>
+          <button class="filter-btn" data-filter="github">GitHub</button>
+          <button class="filter-btn" data-filter="ramas">Ramas</button>
+          <button class="filter-btn" data-filter="equipo">Equipo</button>
+        </div>
+      </div>
+
+      <div class="progress-box">
+        <div>
+          <strong id="progressText">0 de 0 apuntes abiertos</strong>
+          <span>Tu avance se guarda en este navegador.</span>
+        </div>
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div id="notesGrid" class="notes-grid"></div>
+
+      <p id="emptyState" class="empty-state hidden">
+        No se encontraron apuntes con esa búsqueda.
+      </p>
+    </section>
+
+    <!-- GITFLOW -->
+    <section id="gitflow" class="section dark-section">
+      <div class="section-heading">
+        <span class="section-badge">Trabajo colaborativo</span>
+        <h2>Flujo GitFlow del proyecto</h2>
+        <p>
+          El equipo trabaja usando ramas organizadas para simular un flujo real de desarrollo.
+        </p>
+      </div>
+
+      <div class="workflow-grid">
+        <article class="workflow-card">
+          <span>01</span>
+          <h3>main</h3>
+          <p>Rama estable donde queda la versión final del proyecto.</p>
+        </article>
+
+        <article class="workflow-card">
+          <span>02</span>
+          <h3>develop</h3>
+          <p>Rama de desarrollo donde se unen los avances del equipo.</p>
+        </article>
+
+        <article class="workflow-card">
+          <span>03</span>
+          <h3>feature/*</h3>
+          <p>Ramas individuales donde cada integrante trabaja su tarea.</p>
+        </article>
+
+        <article class="workflow-card">
+          <span>04</span>
+          <h3>Pull Request</h3>
+          <p>Permite revisar cambios antes de unirlos a develop.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section id="equipo" class="section">
+      <div class="section-heading">
+        <span class="section-badge">Colaboradores</span>
+        <h2>Equipo de trabajo</h2>
+        <p>
+          Cada integrante trabaja en una rama propia y aporta una parte específica del proyecto.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card">
+          <h3>Ignacio Alex</h3>
+          <p>Líder del repositorio, estructura principal, diseño base y release final.</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Alata</h3>
+          <p>Contenido de apuntes, descripción de clases y tarjetas informativas.</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Camila</h3>
+          <p>Interacción con JavaScript, buscador, filtros y progreso.</p>
+        </article>
+
+        <article class="team-card">
+          <h3>Gabriel Jhoan</h3>
+          <p>Responsive, documentación, footer y revisión final visual.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" title="Volver arriba">↑</button>
+
+  <footer class="footer">
+    <p>GitHub Clases - Proyecto grupal de Git y GitHub</p>
+    <span>Desarrollado con HTML, CSS, JavaScript, Git y GitHub.</span>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
