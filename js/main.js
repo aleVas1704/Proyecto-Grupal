@@ -2,15 +2,32 @@ import { notes } from "./data.js";
 
 const notesGrid = document.querySelector("#notesGrid");
 
-// NUEVO (progreso)
+// PROGRESO
 const progressText = document.querySelector("#progressText");
 const progressBar = document.querySelector("#progressBar");
+
+// BUSCADOR
+const searchInput = document.querySelector("#searchInput");
+let currentSearch = "";
 
 // LOCAL STORAGE
 let openedNotes = JSON.parse(localStorage.getItem("openedNotes")) || [];
 
 function saveOpenedNotes() {
   localStorage.setItem("openedNotes", JSON.stringify(openedNotes));
+}
+
+// FILTRAR (NUEVO)
+function getFilteredNotes() {
+  return notes.filter(note => {
+    const text = `
+      ${note.title}
+      ${note.summary}
+      ${note.description}
+    `.toLowerCase();
+
+    return text.includes(currentSearch.toLowerCase());
+  });
 }
 
 // CREAR TARJETA
@@ -40,12 +57,15 @@ function createNoteCard(note) {
 
 // RENDER
 function renderNotes() {
-  notesGrid.innerHTML = notes.map(createNoteCard).join("");
+  const filtered = getFilteredNotes();
+
+  notesGrid.innerHTML = filtered.map(createNoteCard).join("");
+
   activateNoteEvents();
-  updateProgress(); // ← IMPORTANTE
+  updateProgress();
 }
 
-// EVENTOS (abrir/cerrar)
+// EVENTOS
 function activateNoteEvents() {
   document.querySelectorAll(".note-card").forEach(card => {
     const id = card.dataset.id;
@@ -62,7 +82,7 @@ function activateNoteEvents() {
       }
 
       saveOpenedNotes();
-      updateProgress(); // ← IMPORTANTE
+      updateProgress();
     });
   });
 }
@@ -77,7 +97,13 @@ function updateProgress() {
   progressBar.style.width = percent + "%";
 }
 
+// EVENTO BUSCADOR (NUEVO)
+searchInput.addEventListener("input", () => {
+  currentSearch = searchInput.value.trim();
+  renderNotes();
+});
+
 // INICIAR
 renderNotes();
 
-console.log("Camila 6 listo");
+console.log("Camila 7 listo 🔍");
